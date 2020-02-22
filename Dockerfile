@@ -8,7 +8,7 @@ RUN apk add --no-cache \
   git \
   && rm -rf /var/cache/apk/*
 
-COPY repolint.json /repolinter
+COPY repolint.json /repolinter/
 
 COPY entrypoint.sh /entrypoint.sh
 
