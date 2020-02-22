@@ -1,0 +1,16 @@
+name: "repolinter"
+description: "Runs the TODO group's REPOLINTER over your repository"
+author: "Jeroen Knoops <jeroen.knoops@philips.com>"
+branding:
+  icon: "check"
+  color: "green"
+
+inputs:
+  custom-repolint-file:
+    description: "a path to a custom-repolint-file you wish to use"
+    required: false
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  env:
+    CUSTOM_REPOLINT_FILE: ${{ inputs.custom-repolint-file }}

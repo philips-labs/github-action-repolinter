@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "all": {
+      "license-file-exists:file-existence": ["error", {"files": ["LICENSE*", "COPYING*"]}],
+      "readme-file-exists:file-existence": ["error", {"files": ["README*"]}],
+      "binaries-not-present:file-type-exclusion": ["error", {"type": ["**/*.exe", "**/*.dll", "!node_modules/**"]}]
+    }
+  }
+}

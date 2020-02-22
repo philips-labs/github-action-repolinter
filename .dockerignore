@@ -1,0 +1,7 @@
+# ignore all files by default
+*
+
+# explicitly require files
+!entrypoint.sh
+!LICENSE
+!README.md
