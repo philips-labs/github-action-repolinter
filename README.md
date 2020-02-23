@@ -4,7 +4,7 @@
 
 [![Marketplace](https://img.shields.io/badge/GitHub-Marketplace-green.svg)](https://github.com/marketplace/actions/repolinter) [![Release](https://img.shields.io/github/release/philips-labs/github-action-repolinter.svg)](https://github.com/philips-labs/github-action-repolinter/releases) ![.github/workflows/lint.yml](https://github.com/philips-labs/github-action-repolinter/workflows/.github/workflows/lint.yml/badge.svg)
 
-This Action wraps [`repolintert`](https://github.com/todogroup/repolinter) allowing easy linting of your repository!
+This Action wraps [`repolinter`](https://github.com/todogroup/repolinter) allowing easy linting of your repository!
 
 </div>
 
