@@ -6,10 +6,9 @@ echo "[INFO] Installing todogroup/repolinter"
 npm install -g log-symbols 
 npm install -g todogroup/repolinter 
 
-echo "[INFO] Checking custom repolint file"
-if [ -n "$CUSTOM_REPOLINT_FILE" ]; then
-  echo "[INFO] Using custom repolint file"
-  cp -ar $CUSTOM_REPOLINT_FILE /repolinter/repolint.json 
+if [ -z "$CUSTOM_REPOLINT_FILE" ]; then
+  echo "[INFO] Insert default configuration"
+  cp /repolinter/repolint.json .
 fi
 
 echo "[INFO] Executing:"
