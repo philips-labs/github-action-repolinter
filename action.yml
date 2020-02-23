@@ -9,7 +9,6 @@ inputs:
   custom-repolint-file:
     description: "a path to a custom-repolint-file you wish to use"
     required: false
-    default: /repolinter/repolint.json
 runs:
   using: "docker"
   image: "Dockerfile"
