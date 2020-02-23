@@ -37,7 +37,7 @@ on: [push]
 
 jobs:
   repo-lint:
-    name: "repolint: vanilla"
+    name: "repolint"
     runs-on: ubuntu-latest
     steps:
       - name: "checkout repo"
@@ -45,7 +45,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Test repolinter
-        uses: philips-labs/github-action-repolinter
+        uses: philips-labs/github-action-repolinter@master
 ```
 
 ### Custom configuration file: 
@@ -57,8 +57,8 @@ name: Lint repository
 on: [push]
 
 jobs:
-  repo-lint:
-    name: "repolint: custom"
+  repo-lint-custom:
+    name: "repolint custom"
     runs-on: ubuntu-latest
     steps:
       - name: "checkout repo"
@@ -66,9 +66,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Test repolinter
-        uses: philips-labs/github-action-repolinter
+        uses: philips-labs/github-action-repolinter@master
         env:
-          CUSTOM_REPOLINT_FILE: "repolint.json"
+          CUSTOM_REPOLINT_FILE: repolint.json
 ```
 
 
@@ -81,8 +81,27 @@ name: Lint repository
 on: [push]
 
 jobs:
-  repo-lint:
-    name: "repolint: vanilla"
+  repo-lint-git:
+    name: "repolint git"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test repolinter
+        uses: philips-labs/github-action-repolinter@master
+        with:
+          args: --git https://github.com/philips-labs/garo
+```
+
+### Scan external git repository and custom configuration
+
+Specify the configuration file:
+
+```yaml
+name: Lint repository
+on: [push]
+
+jobs:
+  repo-lint-git-custom:
+    name: "repolint git custom"
     runs-on: ubuntu-latest
     steps:
       - name: "checkout repo"
@@ -90,10 +109,15 @@ jobs:
         with:
           fetch-depth: 0
       - name: Test repolinter
-        uses: philips-labs/github-action-repolinter
+        uses: philips-labs/github-action-repolinter@master
         with:
-          args: "--git https://github.com/philips-labs/garo"
-```
+          args: --git https://github.com/philips-labs/garo
+        env:
+          CUSTOM_REPOLINT_FILE: repolint.json
+
+#### Examples
+
+[example repo](https://github.com/JeroenKnoops/github-action-repolinter-examples)
 
 ### Contributors
 
