@@ -114,6 +114,7 @@ jobs:
           args: --git https://github.com/philips-labs/garo
         env:
           CUSTOM_REPOLINT_FILE: repolint.json
+```
 
 #### Examples
 
