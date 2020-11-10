@@ -3,6 +3,6 @@
 
 # explicitly require files
 !entrypoint.sh
-!repolint.json
+!repolint.yml
 !LICENSE
 !README.md
