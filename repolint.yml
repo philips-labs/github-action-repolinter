@@ -1,0 +1,31 @@
+---
+"$schema": https://raw.githubusercontent.com/prototypicalpro/repolinter/master/rulesets/schema.json
+version: 2
+axioms: {}
+rules:
+  license-file-exists:
+    level: error
+    rule:
+      type: file-existence
+      options:
+        globsAny:
+        - LICENSE* 
+        - COPYING* 
+        nocase: true
+  readme-file-exists:
+    level: error
+    rule:
+      type: file-existence
+      options:
+        globsAny:
+        - README*
+        nocase: true
+  binaries-not-present:
+    level: error
+    rule:
+      type: file-not-exists
+      options:
+        globsAll:
+          - "**/*.exe"
+          - "**/*.dll"
+          - "!node_modules/**"
