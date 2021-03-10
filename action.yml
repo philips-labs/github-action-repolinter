@@ -6,6 +6,9 @@ branding:
   color: "green"
 
 inputs:
+  custom-repolint-url:
+    description: "a url to a custom-repolint-file you wish to use"
+    required: false
   custom-repolint-file:
     description: "a path to a custom-repolint-file you wish to use"
     required: false
@@ -14,3 +17,4 @@ runs:
   image: "Dockerfile"
   env:
     CUSTOM_REPOLINT_FILE: ${{ inputs.custom-repolint-file }}
+    CUSTOM_REPOLINT_URL: ${{ inputs.custom-repolint-url }}
